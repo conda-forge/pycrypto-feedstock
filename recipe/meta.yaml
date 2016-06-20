@@ -21,17 +21,20 @@ source:
     - pycrypto_PR_200.diff
 
 build:
-  number: 0
-  script:
-    - export LDFLAGS="-headerpad_max_install_names"  # [osx]
-    - python setup.py install test
+  number: 1
 
 requirements:
   build:
+    - autoconf    # [unix]
+    - pkg-config  # [unix]
     - python
+    - gmp         # [unix]
+    - mpir        # [win]
 
   run:
     - python
+    - gmp         # [unix]
+    - mpir        # [win]
 
 test:
   imports:
