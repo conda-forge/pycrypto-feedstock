@@ -16,8 +16,10 @@ source:
     # https://github.com/dlitz/pycrypto/pull/46
     - pycrypto_PR_46.diff
     # Try a patch to fix Windows builds.
+    # https://github.com/dlitz/pycrypto/pull/199
     - pycrypto_PR_199.diff
     # Fixing a Windows testing issue.
+    # https://github.com/dlitz/pycrypto/pull/200
     - pycrypto_PR_200.diff
 
 build:
