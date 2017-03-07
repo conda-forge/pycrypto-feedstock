@@ -22,6 +22,7 @@ source:
 
 build:
   number: 0
+  skip: true  # [py>35]
   script:
     - export LDFLAGS="-headerpad_max_install_names"  # [osx]
     - python setup.py install test
