@@ -23,10 +23,10 @@ source:
     - pycrypto_PR_200.diff
 
 build:
-  number: 0
-  skip: true  # [py>35]
+  number: 1
   script:
-    - export LDFLAGS="-headerpad_max_install_names"  # [osx]
+    - set CL=/FI"%VCINSTALLDIR%\\INCLUDE\\stdint.h" %CL%  # [win and py>=35]
+    - export LDFLAGS="-headerpad_max_install_names"       # [osx]
     - python setup.py install test
 
 requirements:
