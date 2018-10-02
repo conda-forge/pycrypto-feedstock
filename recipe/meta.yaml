@@ -23,7 +23,7 @@ source:
     - pycrypto_PR_200.diff
 
 build:
-  number: 2
+  number: 1002
   script:
     - set CL=/FI"%VCINSTALLDIR%\\INCLUDE\\stdint.h" %CL%  # [win and py>=35]
     - export LDFLAGS="-headerpad_max_install_names"       # [osx]
