@@ -39,18 +39,18 @@ source:
     - pycrypto_PR_200.diff
 
 build:
-  number: 1002
+  number: 1003
+  noarch: python
   script:
     - set CL=/FI"%VCINSTALLDIR%\\INCLUDE\\stdint.h" %CL%  # [win and py>=35]
     - export LDFLAGS="-headerpad_max_install_names"       # [osx]
-    - python setup.py install test
+    - "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - python
-
+    - pip
   run:
     - python
 
