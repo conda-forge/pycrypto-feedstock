@@ -5,9 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  fn: pycrypto-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/p/pycrypto/pycrypto-{{ version }}.tar.gz
-  md5: 55a61a054aa66812daf5161a0d5d7eda
+  sha256: f2ce1e989b272cfcb677616763e0a2e7ec659effa67a88aa92b3a65528f60a3c
   patches:
     # Patches from debian, some build related, others concerning CVEs
     # Gotten from http://ftp.debian.org/debian/pool/main/p/python-crypto/
@@ -37,11 +36,12 @@ source:
     # Fixing a Windows testing issue.
     # https://github.com/dlitz/pycrypto/pull/200
     - pycrypto_PR_200.diff
+    # Force use of microsoft's stdint
+    - 0001-Fix-building-with-modern-windows.patch  # [win]
 
 build:
   number: 1005
   script:
-    - del src/inc-msvc/stdint.h                           # [win and py>=35]
     - export LDFLAGS="-headerpad_max_install_names"       # [osx]
     - "{{ PYTHON }} -m pip install . --no-deps -vv"
 
