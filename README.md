@@ -3,7 +3,7 @@ About pycrypto
 
 Home: http://www.pycrypto.org/
 
-Package license: Public Domain
+Package license: LicenseRef-Public-Domain
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pycrypto-feedstock/blob/master/LICENSE.txt)
 
