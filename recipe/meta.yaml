@@ -81,7 +81,8 @@ test:
 
 about:
   home: http://www.pycrypto.org/
-  license: Public Domain
+  license: LicenseRef-Public-Domain
+  license_family: PUBLIC-DOMAIN
   license_file: COPYRIGHT
   summary: Cryptographic modules for Python.
   description: |
