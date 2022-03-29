@@ -41,9 +41,7 @@ source:
 
 build:
   number: 1006
-  script:
-    - export LDFLAGS="-headerpad_max_install_names"       # [osx]
-    - "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   build:
