@@ -23,6 +23,7 @@ source:
     - 0011-asn1-decoding.patch
     - 0012-CVE-2013-7459.patch
     - 0013-Backport-of-fix-for-CVE-2018-6594-from-pycryptodome.patch
+    - fix_old_exception_syntax.patch
 
     # Add a patch to fix an error in a test. See PR below for details.
     # https://github.com/dlitz/pycrypto/pull/22
@@ -40,7 +41,7 @@ source:
     - 0001-Fix-building-with-modern-windows.patch  # [win]
 
 build:
-  number: 1006
+  number: 1007
   script:
     - export LDFLAGS="-headerpad_max_install_names"       # [osx]
     - "{{ PYTHON }} -m pip install . --no-deps -vv"
